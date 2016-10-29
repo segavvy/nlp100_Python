@@ -24,7 +24,7 @@ def extract_UK():
 
 def remove_markup(target):
 	'''マークアップの除去
-	強調マークアップと内部リンクを除去する
+	MediaWikiマークアップを可能な限り除去する
 
 	引数：
 	target -- 対象の文字列
