@@ -79,13 +79,18 @@ class Chunk:
 				return True
 		return False
 
-	def get_morphs_by_pos(self, pos):
-		'''指定した品詞（pos）の形態素のリストを返す
+	def get_morphs_by_pos(self, pos, pos1=''):
+		'''指定した品詞（pos）、品詞細分類1（pos1）の形態素のリストを返す
+		pos1の指定がない場合はposのみで判定する
 
 		戻り値：
 		形態素（morph）のリスト、該当形態素がない場合は空のリスト
 		'''
-		return [res for res in self.morphs if res.pos == pos]
+		if len(pos1) > 0:
+			return [res for res in self.morphs
+					if (res.pos == pos) and (res.pos1 == pos1)]
+		else:
+			return [res for res in self.morphs if res.pos == pos]
 
 
 def neco_lines():
@@ -170,16 +175,30 @@ with open(fname_result, mode='w') as out_file:
 
 			# 動詞を含むかチェック
 			verbs = chunk.get_morphs_by_pos('動詞')
-			if len(verbs) > 0:
+			if len(verbs) < 1:
+				continue
 
-				# 係り元の助詞を列挙
-				prts = []
-				for src in chunk.srcs:
-					prts.extend(chunks[src].get_morphs_by_pos('助詞'))
+			# 係り元の列挙
+			prts = []
+			for src in chunk.srcs:
 
-				# 係り元に助詞があれば結果として出力
-				if len(prts) > 0:
-					out_file.write('{}\t{}\n'.format(
-						verbs[0].base,		# 最左の動詞の基本系
-						' '.join(sorted(prt.surface for prt in prts))	# 助詞は辞書順
-					))
+				# 助詞を検索
+				prts_in_chunk = chunks[src].get_morphs_by_pos('助詞')
+				if len(prts_in_chunk) > 1:
+
+					# Chunk内に2つ以上助詞がある場合は、格助詞を優先
+					kaku_prts = chunks[src].get_morphs_by_pos('助詞', '格助詞')
+					if len(kaku_prts) > 0:
+						prts_in_chunk = kaku_prts
+
+				if len(prts_in_chunk) > 0:
+					prts.append(prts_in_chunk[-1])	# 抽出する助詞はChunk当たり最後の1つ
+
+			if len(prts) < 1:
+				continue
+
+			# 出力
+			out_file.write('{}\t{}\n'.format(
+				verbs[0].base,		# 最左の動詞の基本系
+				' '.join(sorted(prt.surface for prt in prts))	# 助詞は辞書順
+			))
