@@ -11,8 +11,7 @@ def nlp_lines():
 	戻り値：
 	1文の文字列
 	'''
-	with open(fname) as nlp_file:
-		buf = ''		# 読み込みバッファ
+	with open(fname) as lines:
 
 		# 文切り出しの正規表現コンパイル
 		pattern = re.compile(r'''
@@ -28,33 +27,24 @@ def nlp_lines():
 			)
 		''', re.MULTILINE + re.VERBOSE + re.DOTALL)
 
-		while True:
+		for line in lines:
 
-			# バッファが空なら読み込み
-			if len(buf) < 1:
+			line = line.strip()		# 前後の空白文字除去
+			while len(line) > 0:
 
-				buf = nlp_file.readline()
-				if not buf:
-					raise StopIteration		# ファイルの終端
+				# 行から1文を取得
+				match = pattern.match(line)
+				if match:
 
-				# 終端の改行除去
-				buf = buf.rstrip('\n')
-				if (len(buf) < 1):
-					continue		# 空行はスキップ
+					# 切り出した文を返す
+					yield match.group(1)		# 先頭の文
+					line = match.group(2)		# 次の文以降
 
-			# バッファから1文を取得
-			match = pattern.match(buf)
-			if match:
+				else:
 
-				# 切り出した文を返す
-				yield match.group(1)		# 先頭の文
-				buf = match.group(2)		# 次の文以降
-
-			else:
-
-				# 区切りがないので、最後までが1文
-				yield buf
-				buf = ''
+					# 区切りがないので、最後までが1文
+					yield line
+					line = ''
 
 
 def nlp_words():
