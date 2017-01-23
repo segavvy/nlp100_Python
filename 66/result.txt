@@ -1,0 +1,26 @@
+segavvy@ubuntu:~$ mongo
+MongoDB shell version v3.4.1
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.1
+Server has startup warnings: 
+2017-01-14T17:47:12.528+0900 I STORAGE  [initandlisten] 
+2017-01-14T17:47:12.528+0900 I STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2017-01-14T17:47:12.528+0900 I STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2017-01-14T17:47:12.898+0900 I CONTROL  [initandlisten] 
+2017-01-14T17:47:12.898+0900 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-01-14T17:47:12.898+0900 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-01-14T17:47:12.898+0900 I CONTROL  [initandlisten] 
+2017-01-14T17:47:12.898+0900 I CONTROL  [initandlisten] 
+2017-01-14T17:47:12.898+0900 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/enabled is 'always'.
+2017-01-14T17:47:12.898+0900 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-01-14T17:47:12.898+0900 I CONTROL  [initandlisten] 
+2017-01-14T17:47:12.898+0900 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2017-01-14T17:47:12.898+0900 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2017-01-14T17:47:12.898+0900 I CONTROL  [initandlisten] 
+> use testdb
+switched to db testdb
+> db.artist.find({'area': 'Japan'}).count()
+22821
+> exit
+bye
+
