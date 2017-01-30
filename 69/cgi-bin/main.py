@@ -7,7 +7,7 @@ import cgi
 import cgitb
 from html import escape
 
-# 詳細なエラー情報をブラウザーの表示
+# 詳細なエラー情報をブラウザーで表示
 cgitb.enable()
 
 max_view_count = 20		# 最大結果表示数
