@@ -114,12 +114,8 @@ def load_dict_features():
 	戻り値：
 	素性をインデックスに変換する辞書
 	'''
-	dict_features = {}
 	with codecs.open(fname_features, 'r', fencoding) as file_in:
-		for i, line in enumerate(file_in, start=1):
-			dict_features[line.strip()] = i
-
-	return dict_features
+		return {line.strip(): i for i, line in enumerate(file_in, start=1)}
 
 
 def create_training_set(sentiments, dict_features):
