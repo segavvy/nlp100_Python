@@ -21,10 +21,8 @@ with open(fname_counter_c, 'rb') as data_file:
 	counter_c = pickle.load(data_file)
 
 # {単語, インデックス}の辞書作成
-dict_index_t = OrderedDict(
-		[(key, i) for i, key in enumerate(counter_t.keys())])
-dict_index_c = OrderedDict(
-		[(key, i) for i, key in enumerate(counter_c.keys())])
+dict_index_t = OrderedDict((key, i) for i, key in enumerate(counter_t.keys()))
+dict_index_c = OrderedDict((key, i) for i, key in enumerate(counter_c.keys()))
 
 # 行列作成
 size_t = len(dict_index_t)
