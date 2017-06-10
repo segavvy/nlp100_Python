@@ -11,7 +11,7 @@ with bz2.open(fname_input, 'rt') as data_file, \
 		# 空白で分解、前後の記号除去
 		tokens = []		# 結果のトークン配列
 		for chunk in line.split(' '):
-			token = chunk.strip('.,!?;:()[]\'"').strip()
+			token = chunk.strip().strip('.,!?;:()[]\'"')
 			if len(token) > 0:
 				tokens.append(token)
 
