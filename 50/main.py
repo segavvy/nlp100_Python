@@ -3,7 +3,6 @@ import re
 
 fname = 'nlp.txt'
 
-
 def nlp_lines():
 	'''nlp.txtを1文ずつ読み込むジェネレータ
 	nlp.txtを順次読み込んで1文ずつ返す
@@ -18,7 +17,7 @@ def nlp_lines():
 			(
 				^					# 行頭
 				.*?					# 任意のn文字、最少マッチ
-				[\.|\;|\:|\?|\!]	# . or ; or : or ? or !
+				[\.|;|:|\?|!]	# . or ; or : or ? or !
 			)
 			\s						# 空白文字
 			(
