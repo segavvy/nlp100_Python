@@ -16,9 +16,7 @@ with gzip.open(fname, 'rt') as data_file:
 
 		# key=name+id、value=areaとしてDBへ追加
 		key = data_json['name'] + '\t' + str(data_json['id'])
-		value = data_json.get('area')		# areaはないことがあるのでチェック
-		if value is None:
-			value = ''
+		value = data_json.get('area', '')		# areaはないことがある
 		db.Put(key.encode(), value.encode())
 
 # 確認のため登録件数を表示
