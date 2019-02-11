@@ -15,7 +15,7 @@ results = collection.find({'tags.value': 'dance'})
 results.sort('rating.count', pymongo.DESCENDING)
 
 # 10件表示
-for i, doc in enumerate(results[0:10], start=1):
+for doc in results.limit(10):
 
 	if 'rating' in doc:
 		rating = doc['rating']['count']
