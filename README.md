@@ -1,11 +1,11 @@
 # nlp100_Python
 [言語処理100本ノック 2015](http://www.cl.ecei.tohoku.ac.jp/nlp100/)の挑戦記録のまとめです。解説は以下のQiitaへのリンクを参照してください。
 
-#挑戦した環境
+# 挑戦した環境
 Ubuntu 16.04 LTS ＋ Python 3.5.2 \:\: Anaconda 4.1.1 (64-bit)です。
 （[問題00](http://qiita.com/segavvy/items/709c6e2d156b7837b3a8)と[問題01](http://qiita.com/segavvy/items/966c7b658ca740f6164b)だけはPython 2.7です。）
 
-#第1章: 準備運動
+# 第1章: 準備運動
 >テキストや文字列を扱う題材に取り組みながら，プログラミング言語のやや高度なトピックを復習します．
 
 | Qiitaへのリンク | 主に学んだこと、コメントで教えていただいたことなど |
@@ -21,7 +21,7 @@ Ubuntu 16.04 LTS ＋ Python 3.5.2 \:\: Anaconda 4.1.1 (64-bit)です。
 |[問題08](http://qiita.com/segavvy/items/5552623de614ca3344df)|`chr()`、`str.islower()`、`input()`、3項演算子|
 |[問題09](http://qiita.com/segavvy/items/be0f59af4b410069516d)|Typoglycemia、`random.shuffle()`|
 
-#第2章: UNIXコマンドの基礎
+# 第2章: UNIXコマンドの基礎
 >研究やデータ分析において便利なUNIXツールを体験します．これらの再実装を通じて，プログラミング能力を高めつつ，既存のツールのエコシステムを体感します．
 
 | Qiitaへのリンク | 主に学んだこと、コメントで教えていただいたことなど |
@@ -37,7 +37,7 @@ Ubuntu 16.04 LTS ＋ Python 3.5.2 \:\: Anaconda 4.1.1 (64-bit)です。
 |[問題18](http://qiita.com/segavvy/items/adee520db1a257e347d5)|ラムダ式|
 |[問題19](http://qiita.com/segavvy/items/58f11bce5f786e590d98)|リストの内包表記、`itertools.groupby()`、`list.sort()`|
 
-#第3章: 正規表現
+# 第3章: 正規表現
 >Wikipediaのページのマークアップ記述に正規表現を適用することで，様々な情報・知識を取り出します．
 
 | Qiitaへのリンク | 主に学んだこと、コメントで教えていただいたことなど |
@@ -53,7 +53,7 @@ Ubuntu 16.04 LTS ＋ Python 3.5.2 \:\: Anaconda 4.1.1 (64-bit)です。
 |[問題28](http://qiita.com/segavvy/items/8c4567ec1124320d3354)||
 |[問題29](http://qiita.com/segavvy/items/fc7257012d8a590185e5)|Webサービスの利用、`urllib.request.Request()`、`urllib.request.urlopen()`、`bytes.decode()`|
 
-#第4章: 形態素解析
+# 第4章: 形態素解析
 >夏目漱石の小説『吾輩は猫である』に形態素解析器MeCabを適用し，小説中の単語の統計を求めます．
 
 | Qiitaへのリンク | 主に学んだこと、コメントで教えていただいたことなど |
@@ -70,7 +70,7 @@ Ubuntu 16.04 LTS ＋ Python 3.5.2 \:\: Anaconda 4.1.1 (64-bit)です。
 |[問題39](http://qiita.com/segavvy/items/e0a7994cc63c8be7380b)|[matplotlib]散布図、Zipfの法則|
 
 
-#第5章: 係り受け解析
+# 第5章: 係り受け解析
 >『吾輩は猫である』に係り受け解析器CaboChaを適用し，係り受け木の操作と統語的な分析を体験します．
 
 
@@ -87,7 +87,7 @@ Ubuntu 16.04 LTS ＋ Python 3.5.2 \:\: Anaconda 4.1.1 (64-bit)です。
 |[問題48](http://qiita.com/segavvy/items/ed5cc48dc02afd8855a1)|[係り受け解析]名詞から根へのパス|
 |[問題49](http://qiita.com/segavvy/items/dfbf9d5dd5885e807d49)|[係り受け解析]名詞間の係り受けパス|
 
-#第6章: 英語テキストの処理
+# 第6章: 英語テキストの処理
 >Stanford Core NLPを用いた英語のテキスト処理を通じて，自然言語処理の様々な基盤技術を概観します．
 
 | Qiitaへのリンク | 主に学んだこと、コメントで教えていただいたことなど |
@@ -103,7 +103,7 @@ Ubuntu 16.04 LTS ＋ Python 3.5.2 \:\: Anaconda 4.1.1 (64-bit)です。
 |[問題58](http://qiita.com/segavvy/items/f100fc38e350ad14b679)|[Stanford Core NLP]主語,述語,目的語|
 |[問題59](http://qiita.com/segavvy/items/0c14bcc7f6a983554637)|[Stanford Core NLP]句構造解析,S式、再帰呼び出し、`sys.setrecursionlimit()`、`threading.stack_size()`|
 
-#第7章: データベース
+# 第7章: データベース
 >Key Value Store (KVS) やNoSQLによるデータベースの構築・検索を修得します．また，CGIを用いたデモ・システムを開発します．
 
 | Qiitaへのリンク | 主に学んだこと、コメントで教えていただいたことなど |
@@ -119,7 +119,7 @@ Ubuntu 16.04 LTS ＋ Python 3.5.2 \:\: Anaconda 4.1.1 (64-bit)です。
 |[問題68](http://qiita.com/segavvy/items/7da17f5ca81b28abe637)|[MongoDB]ソート|
 |[問題69](http://qiita.com/segavvy/items/a8ed8a91ed2c6b834923)|Webサーバー、CGI、HTMLエスケープ、`html.escape()`、`html.unescape()`、[MongoDB]複数条件の検索|
 
-#第8章: 機械学習
+# 第8章: 機械学習
 >評判分析器（ポジネガ分析器）を機械学習で構築します．さらに，手法の評価方法を学びます．
 
 | Qiitaへのリンク | 主に学んだこと、コメントで教えていただいたことなど |
@@ -135,7 +135,7 @@ Ubuntu 16.04 LTS ＋ Python 3.5.2 \:\: Anaconda 4.1.1 (64-bit)です。
 |[問題78](http://qiita.com/segavvy/items/50820438fd6d10ceba7d)|[機械学習]5分割交差検定|
 |[問題79](http://qiita.com/segavvy/items/68e5661351da52f1d765)|[matplotlib]折れ線グラフ|
 
-#第9章: ベクトル空間法 (I)
+# 第9章: ベクトル空間法 (I)
 >大規模なコーパスから単語文脈共起行列を求め，単語の意味を表すベクトルを学習します．その単語ベクトルを用い，単語の類似度やアナロジーを求めます．
 
 | Qiitaへのリンク | 主に学んだこと、コメントで教えていただいたことなど |
@@ -151,7 +151,7 @@ Ubuntu 16.04 LTS ＋ Python 3.5.2 \:\: Anaconda 4.1.1 (64-bit)です。
 |[問題88](http://qiita.com/segavvy/items/26ec387217b030a15c21)||
 |[問題89](http://qiita.com/segavvy/items/2d21c9b5ab7e338dcf51)|加法構成性、アナロジー|
 
-#第10章: ベクトル空間法 (II)
+# 第10章: ベクトル空間法 (II)
 >word2vecを用いて単語の意味を表すベクトルを学習し，正解データを用いて評価します．さらに，クラスタリングやベクトルの可視化を体験します．
 
 | Qiitaへのリンク | 主に学んだこと、コメントで教えていただいたことなど |
