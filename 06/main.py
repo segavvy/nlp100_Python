@@ -2,19 +2,19 @@
 
 
 def n_gram(target, n):
-	'''指定されたリストからn-gramを作成
+    '''指定されたリストからn-gramを作成
 
-	引数:
-	target -- 対象リスト
-	n -- n-gramのn値（1ならuni-gram、2ならbi-gram...）
-	戻り値:
-	gramのリスト
-	'''
-	result = []
-	for i in range(0, len(target) - n + 1):
-		result.append(target[i:i + n])
+    引数:
+    target -- 対象リスト
+    n -- n-gramのn値（1ならuni-gram、2ならbi-gram...）
+    戻り値:
+    gramのリスト
+    '''
+    result = []
+    for i in range(0, len(target) - n + 1):
+        result.append(target[i:i + n])
 
-	return result
+    return result
 
 
 # 集合の作成
@@ -33,7 +33,9 @@ print('積集合:' + str(set_and))
 
 # 差集合
 set_sub = set_x - set_y
-print('差集合:' + str(set_sub))
+print('差集合(X - Y):' + str(set_sub))
+set_sub = set_y - set_x
+print('差集合(Y - X):' + str(set_sub))
 
 # 'se'が含まれるか？
 print('seがXに含まれる:' + str('se' in set_x))
